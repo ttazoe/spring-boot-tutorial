@@ -11,33 +11,50 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <h4 class="border-bottom my-3" th:text="#{inquiry}">
+            <h4 class="border-bottom my-3" th:text="#{invoice}">
             </h4>
 
-            <form th:action="@{/}" th:object="${inquiry}"
+            <form th:action="@{/}" th:object="${invoice}"
                   method="post" novalidate>
                 <div class="mb-3">
-                    <label for="name" th:text="#{name}"></label>
+                    <label for="name" th:text="#{name}"></label> <!-- messages.properties #{name} を定義する -->
                     <input type="text" class="form-control"
                            th:errorclass="is-invalid" th:field="*{name}">
+                    <!-- th:object で指定した ${invoice} オブジェクトの name field を指定している。 -->
                     <div class="invalid-feedback" th:errors="*{name}">
                     </div>
                 </div>
 
                 <div class="mb-3">
-                    <label for="email" th:text="#{email}"></label>
-                    <input type="email" class="form-control"
-                           th:errorclass="is-invalid" th:field="*{email}">
-                    <div class="invalid-feedback" th:errors="*{email}">
+                    <label for="address" th:text="#{address}"></label>
+                    <input type="text" class="form-control"
+                           th:errorclass="is-invalid" th:field="*{address}">
+                    <div class="invalid-feedback" th:errors="*{address}">
+                    </div>
+                </div>
+
+
+                <div class="mb-3">
+                    <label for="phone" th:text="#{phoneNumber}"></label>
+                    <input type="tel" class="form-control"
+                           th:errorclass="is-invalid" th:field="*{phoneNumber}">
+                    <div class="invalid-feedback" th:errors="*{phoneNumber}">
                     </div>
                 </div>
 
                 <div class="mb-3">
-                    <label for="inquiry" th:text="#{inquiry}"></label>
-                    <textarea class="form-control" rows="3"
-                              th:errorclass="is-invalid" th:field="*{inquiry}">
-                </textarea>
-                    <div class="invalid-feedback" th:errors="*{inquiry}">
+                    <label for="price" th:text="#{price}"></label>
+                    <input type="text" class="form-control"
+                           th:errorclass="is-invalid" th:field="*{price}">
+                    <div class="invalid-feedback" th:errors="*{price}">
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="paymentDeadline" th:text="#{paymentDeadline}"></label>
+                    <input type="date" class="form-control"
+                           th:errorclass="is-invalid" th:field="*{paymentDeadline}">
+                    <div class="invalid-feedback" th:errors="*{paymentDeadline}">
                     </div>
                 </div>
 

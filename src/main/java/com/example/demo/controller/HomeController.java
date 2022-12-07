@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import com.example.demo.model.Inquiry;
+import com.example.demo.model.Invoice;
 import com.example.demo.model.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -22,12 +23,12 @@ public class HomeController {
     }
 
     @GetMapping("/")
-    public String index(@ModelAttribute Inquiry inquiry) {
+    public String index(@ModelAttribute Invoice invoice) {
         return "index";
     }
 
     @PostMapping("/")
-    public String index(@Validated @ModelAttribute Inquiry inquiry, BindingResult result) {
+    public String index(@Validated @ModelAttribute Invoice invoice, BindingResult result) {
         if (result.hasErrors()) {
             return "index";
         }
