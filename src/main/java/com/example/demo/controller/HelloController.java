@@ -15,11 +15,6 @@ public class HelloController {
         return "hello";
     }
 
-    @GetMapping("/")
-    public String index(){
-        return "form";
-    }
-
     @PostMapping("/confirm")
     public String confirm(@RequestParam String message, Model model) {
         model.addAttribute("message", message);
